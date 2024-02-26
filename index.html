@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizzatore di Note</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="weather-info">
+    <div id="city"></div>
+    <div id="weather"></div>
+        <img id="weather-icon" src="" alt="Weather Icon" style="width: 50px; vertical-align: middle;"> <!-- Aggiunto -->
+
+</div>
+
+
+<div class="background-selector">
+    <div class="color-choice" data-color="#efefef" style="background-color: #eeeeee;"></div>
+    <div class="color-choice" data-color="#ffcad4" style="background-color: #ffcad4;"></div>
+    <div class="color-choice" data-color="#bde0fe" style="background-color: #bde0fe;"></div>
+    <div class="color-choice" data-color="#ffb4a2" style="background-color: #ffb4a2;"></div>
+    <div class="color-choice" data-color="#ffffb5" style="background-color: #ffffb5;"></div>
+</div>
+
+    <div id="inputArea">
+        <input type="text" id="noteInput" placeholder="Inserisci una nota...">
+    </div>
+
+    <div id="contentArea">
+        <div id="noteContainer" class="container">
+            <div class="container-header">
+                <img src="icons/writing.png" alt="Nota" class="icon" data-type="note">
+                <span>Note</span>
+            </div>
+        </div>
+        <div id="todoContainer" class="container">
+            <div class="container-header">
+                <img src="icons/checklist.png" alt="Todo" class="icon" data-type="todo">
+                <span>Todo</span>
+            </div>
+        </div>
+        <div id="calendarContainer" class="container">
+            <div class="container-header">
+                <img src="icons/calendar.png" alt="Calendario" class="icon" data-type="calendar">
+                <span>Calendario</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

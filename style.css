@@ -1,0 +1,166 @@
+body {
+    font-family: Poppins,  Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    padding-bottom: 200px;
+    
+}
+
+#inputArea input {
+    width: 100%;
+    padding: 15px; /* Rende la barra di input più alta */
+    border-radius: 20px; /* Bordo tondo */
+    font-family: 'Poppins', monospace; /* Usa Fira Code se disponibile */
+    font-style: italic; /* Testo in corsivo */
+    font-size: 16px;
+    border: 2px solid #ccc; /* Bordo sottile */
+    outline: none; /* Rimuove l'outline al focus */
+    margin-top: 30px;;
+    justify-content: center;
+}
+
+#noteInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px; /* Spazio tra input e icone */
+}
+
+.icons-container { /* Contenitore per le icone per disporle orizzontalmente */
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Distanza tra le icone */
+}
+
+.icon {
+    width: 48px; /* Dimensione maggiore */
+    height: 48px;
+    cursor: pointer;
+        transition: transform 0.3s ease; /* Aggiunge un effetto di transizione al ridimensionamento */
+
+}
+.icon:hover {
+    transform: scale(1.1); /* Effetto di ingrandimento all'hover */
+}
+
+.icon.selected { /* Evidenziatore per l'icona selezionata */
+    transform: scale(1.2); /* Rende l'icona selezionata leggermente più grande */
+
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+
+#contentArea {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start; /* Permette ai contenitori di allinearsi in alto e crescere indipendentemente */
+    width: 70%;
+    margin: 40px auto;
+    min-height: 80vh; /* Imposta un'altezza minima per l'area di contenuto */
+}
+
+.container {
+    width: 10%;
+    margin: 0 10px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Permette lo scroll verticale se il contenuto supera l'altezza massima */
+    min-height: 100px; /* Altezza minima per assicurare visibilità */
+    flex-grow: 1; /* Permette ai contenitori di crescere in base al contenuto */
+    max-height: calc(100vh - 200px); /* Altezza massima basata sull'altezza della viewport meno 200px per altri elementi e spazi */
+
+}
+
+.container-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-header .icon {
+    margin-right: 10px; /* Distanza tra icona e testo */
+    margin-bottom: 10px;
+}
+
+
+/* Stili specifici per ogni tipo di post-it */
+#noteContainer {
+    background-color: #f7cdd0; /* Pastello per note */
+}
+#todoContainer {
+    background-color: #f0e99b; /* Pastello per calendario */
+}
+#calendarContainer {
+    background-color: #acdee6; /* Pastello per todo */
+}
+/* Aggiungi queste regole per gestire l'altezza massima dei contenitori basata sulla viewport */
+
+
+
+
+.post-it {
+    width: 80%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+    word-wrap: break-word;
+}
+
+/* Stili specifici per i post-it di ciascuna categoria */
+#noteContainer .post-it {
+    background-color: #ff6481db; /* Colore per note */
+}
+#todoContainer .post-it {
+    background-color: #f8ff70; /* Colore per calendario */
+}
+#calendarContainer .post-it {
+    background-color: #5ed9f1; /* Colore per todo */
+}
+
+.post-it.sbarrato {
+    text-decoration: line-through; /* Sbarra il testo */
+    background-color: #ccc; /* Ingrigisce il post-it */
+    color: #666; /* Opzionale: Cambia il colore del testo per migliorare la leggibilità */
+}
+
+#noteContainer .post-it.sbarrato,
+#todoContainer .post-it.sbarrato,
+#calendarContainer .post-it.sbarrato {
+    text-decoration: line-through;
+    background-color: #ffffff37;
+    color: #666;
+}
+.container.selected {
+    border: 3px solid #ff00002c; /* Cambia #ff0000 con il colore che preferisci */
+}
+
+.background-selector {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.color-choice {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #00000031;
+    cursor: pointer;
+}
+
+#weather-info {
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    color: rgb(147, 147, 147);
+    font-weight: 100;
+}
